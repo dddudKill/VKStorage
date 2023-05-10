@@ -4,12 +4,12 @@
 
   <p align="center">
     Файловый менеджер
-    <br/>
+    <br/Ю 
     <br/>
   </p>
 </p>
 
-![Экран](https://github.com/dddudKill/VKStorage/assets/100380974/789a7e07-9c45-44ba-8a94-04f6abbf0b27)
+![Экран](https://github.com/dddudKill/VKStorage/assets/100380974/fcbd9784-fcab-4202-a621-2480ddda3342)
 
 Приложение разработано в качестве профильного задания в первом этапе отбора на стажировку в VK по специальности Android-разработчик
 
