@@ -9,7 +9,7 @@
   </p>
 </p>
 
-![Экран]([images/screenshot.png](https://github.com/dddudKill/VKStorage/assets/100380974/17f3fb62-5fcd-4287-ba86-56e3fb4f62cf))
+![Экран](https://github.com/dddudKill/VKStorage/assets/100380974/789a7e07-9c45-44ba-8a94-04f6abbf0b27)
 
 Приложение разработано в качестве профильного задания в первом этапе отбора на стажировку в VK по специальности Android-разработчик
 
