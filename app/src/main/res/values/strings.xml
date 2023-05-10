@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">VKStorage</string>
+    <string name="storage_title_text">Хранилище</string>
+    <string name="filter_description_text">Фильтры</string>
+    <string name="filter_name_radio_button_text">Имя</string>
+    <string name="filter_size_radio_button_text">Размер</string>
+    <string name="filter_timestamp_radio_button_text">Дата</string>
+    <string name="filter_extension_radio_button_text">Расширение</string>
+    <string name="filter_order_descending_radio_button_text">По убыванию</string>
+    <string name="filter_order_ascending_radio_button_text">По возрастанию</string>
+    <string name="share_image_button_content_description">Поделиться файлом</string>
+    <string name="delete_image_button_content_description">Удалить файл</string>
+    <string name="size_timestamp_splitter">|</string>
+    <string name="recent_changes_as_path_name">Недавние изменения</string>
+    <string name="file_icon_content_description">Иконка файла</string>
+    <string name="recently_modified_Image_button_content_description">Недавно изменённые</string>
+    <string name="file_deleted_snackbar_message">Файл удалён</string>
+    <string name="undo_deletion_snackbar_message">Отмена</string>
+    <string name="unable_to_open_file_error">Невозможно открыть файл</string>
+    <string name="share_intent_message">Sharing from VKStorage</string>
+    <string name="no_apps_found_exception">Нет подходящих приложений</string>
+    <string name="authority">com.example.vkstorage</string>
+    <string name="on_back_pressed_toast">Нажмите ещё раз для выхода</string>
+    <string name="permission_required_snackbar_message">Необходимо разрешение!</string>
+    <string name="permission_required_snackbar_action">Настройки</string>
+    <string name="permission_denied">Доступ к хранилищу запрещён!</string>
+</resources>

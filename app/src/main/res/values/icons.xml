@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="icons">
+        <item>@drawable/icon_ai</item>
+        <item>@drawable/icon_avi</item>
+        <item>@drawable/icon_bmp</item>
+        <item>@drawable/icon_crd</item>
+        <item>@drawable/icon_csv</item>
+        <item>@drawable/icon_dll</item>
+        <item>@drawable/icon_doc</item>
+        <item>@drawable/icon_docx</item>
+        <item>@drawable/icon_dwg</item>
+        <item>@drawable/icon_eps</item>
+        <item>@drawable/icon_exe</item>
+        <item>@drawable/icon_flv</item>
+        <item>@drawable/icon_giff</item>
+        <item>@drawable/icon_html</item>
+        <item>@drawable/icon_iso</item>
+        <item>@drawable/icon_java</item>
+        <item>@drawable/icon_jpg</item>
+        <item>@drawable/icon_mdb</item>
+        <item>@drawable/icon_mid</item>
+        <item>@drawable/icon_mov</item>
+        <item>@drawable/icon_mp3</item>
+        <item>@drawable/icon_mp4</item>
+        <item>@drawable/icon_mpeg</item>
+        <item>@drawable/icon_pdf</item>
+        <item>@drawable/icon_png</item>
+        <item>@drawable/icon_ppt</item>
+        <item>@drawable/icon_ps</item>
+        <item>@drawable/icon_psd</item>
+        <item>@drawable/icon_pub</item>
+        <item>@drawable/icon_rar</item>
+        <item>@drawable/icon_raw</item>
+        <item>@drawable/icon_rss</item>
+        <item>@drawable/icon_svg</item>
+        <item>@drawable/icon_tiff</item>
+        <item>@drawable/icon_txt</item>
+        <item>@drawable/icon_wav</item>
+        <item>@drawable/icon_wma</item>
+        <item>@drawable/icon_xml</item>
+        <item>@drawable/icon_xsl</item>
+        <item>@drawable/icon_zip</item>
+    </array>
+</resources>

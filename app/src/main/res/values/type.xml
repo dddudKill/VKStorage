@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text">
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+    <style name="Text.Headline1" parent="Text">
+<!--        <item name="android:textFontWeight">500</item>-->
+        <item name="android:fontFamily">@font/satoshi_bold_family</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Text.Headline2" parent="Text">
+        <item name="android:fontFamily">@font/satoshi_bold_family</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Body1" parent="Text">
+        <item name="android:fontFamily">@font/satoshi_regular_family</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/grey_text</item>
+    </style>
+    <style name="Text.Body2" parent="Text">
+        <item name="android:fontFamily">@font/satoshi_regular_family</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:textColor">@color/light_grey_text</item>
+    </style>
+    <style name="Text.Body3" parent="Text">
+        <item name="android:fontFamily">@font/satoshi_regular_family</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>
