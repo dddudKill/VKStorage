@@ -160,9 +160,6 @@ class StorageFragment : Fragment() {
         binding.filterImageButton.setOnClickListener {
             storageViewModel.onEvent(StorageEvents.ToggleOrderSection)
         }
-        binding.filterTypeRadioGroup.isEnabled = false
-        binding.filterOrderRadioGroup.isEnabled = false
-        binding.filterNameRadioButton.isEnabled = false
         binding.filterNameRadioButton.setOnCheckedChangeListener { _, b ->
             if (b) {
                 storageViewModel.onEvent(StorageEvents.Order(FileOrder.Title(state.value.fileOrder.orderType)))
