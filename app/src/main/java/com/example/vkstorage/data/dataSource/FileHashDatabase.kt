@@ -6,7 +6,7 @@ import com.example.vkstorage.domain.model.FileHash
 
 @Database(
     entities = [FileHash::class],
-    version = 2,
+    version = 3,
     exportSchema = false
 )
 abstract class FileHashDatabase : RoomDatabase() {
