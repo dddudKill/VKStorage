@@ -2,13 +2,14 @@ package com.example.vkstorage.common.util
 
 import com.example.vkstorage.R
 import com.example.vkstorage.domain.model.MyFile
+import java.io.BufferedInputStream
 import java.io.File
-import java.io.FileInputStream
 import java.security.MessageDigest
+import java.util.*
 
 fun calculateHash(file: File): String {
     val md = MessageDigest.getInstance("SHA-256")
-    val fis = FileInputStream(file)
+    val fis = BufferedInputStream(file.inputStream())
     val buffer = ByteArray(8192)
     var read: Int
     while (fis.read(buffer).also { read = it } != -1) {
@@ -20,14 +21,16 @@ fun calculateHash(file: File): String {
 }
 
 fun getAllFiles(file: File): List<File> {
-    if (file.listFiles().isNullOrEmpty()) return emptyList()
-    val files = buildList<File> {
-        for (path in file.listFiles()!!) {
-            if (path.isDirectory) {
-                addAll(getAllFiles(path))
-            } else {
-                add(path)
-            }
+    val stack = Stack<File>()
+    val files = mutableListOf<File>()
+
+    stack.push(file)
+    while (stack.isNotEmpty()) {
+        val currentFile = stack.pop()
+        if (currentFile.isDirectory) {
+            currentFile.listFiles()?.forEach { stack.push(it) }
+        } else {
+            files.add(currentFile)
         }
     }
     return files

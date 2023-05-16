@@ -19,53 +19,47 @@ class SaveAllFilesHashes(
     operator fun invoke(): Flow<Resource<List<File>>> = flow {
         try {
             emit(Resource.Loading<List<File>>())
+            var firstLaunch = true
+            val filesToInsert = mutableListOf<FileHash>()
             val recentlyChangedList = buildList<File> {
                 withContext(Dispatchers.IO) {
+                    val savedFiles = repository.getHashes().associateBy { it.path }.toMutableMap()
+                    firstLaunch = savedFiles.isEmpty()
                     val files = getAllFiles(File(Constants.BASE_PATH))
-                    val savedFiles = repository.getHashes()
                     for (file in files) {
                         val currentPath = file.absolutePath
                         val currentHash = calculateHash(file)
-                        val existingFileIndex = savedFiles.indexOfFirst { it.path == currentPath }
-                        if (existingFileIndex != -1) {
-                            if (currentHash == savedFiles[existingFileIndex].hash) {
+                        if (savedFiles.containsKey(currentPath)) {
+                            val savedHash = savedFiles[currentPath]!!.hash
+                            if (currentHash != savedHash) {
                                 val fileHash = FileHash(
                                     hash = currentHash,
-                                    path = currentPath,
-                                    isModifiedSinceLastLaunch = false
+                                    path = currentPath
                                 )
-                                repository.insertHash(fileHash)
-                            } else {
-                                if (savedFiles[existingFileIndex].isModifiedSinceLastLaunch) {
-                                    val fileHash = FileHash(
-                                        hash = currentHash,
-                                        path = currentPath,
-                                        isModifiedSinceLastLaunch = false
-                                    )
-                                    repository.insertHash(fileHash)
-                                } else {
-                                    val fileHash = FileHash(
-                                        hash = currentHash,
-                                        path = currentPath,
-                                        isModifiedSinceLastLaunch = true
-                                    )
-                                    add(File(currentPath))
-                                    repository.insertHash(fileHash)
-                                }
+                                filesToInsert.add(fileHash)
+                                add(File(currentPath))
                             }
                         } else {
                             val fileHash = FileHash(
                                 hash = currentHash,
-                                path = currentPath,
-                                isModifiedSinceLastLaunch = true
+                                path = currentPath
                             )
+                            filesToInsert.add(fileHash)
                             add(File(currentPath))
-                            repository.insertHash(fileHash)
                         }
                     }
                 }
             }
-            emit(Resource.Success<List<File>>(recentlyChangedList))
+            if (firstLaunch) {
+                emit(Resource.Success<List<File>>(emptyList()))
+            } else {
+                emit(Resource.Success<List<File>>(recentlyChangedList))
+            }
+            withContext(Dispatchers.IO) {
+                for (file in filesToInsert) {
+                    repository.insertHash(file)
+                }
+            }
         } catch (e: IOException) {
             emit(
                 Resource.Error<List<File>>(

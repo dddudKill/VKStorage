@@ -7,6 +7,5 @@ import androidx.room.PrimaryKey
 data class FileHash(
     val hash: String,
     @PrimaryKey
-    val path: String,
-    val isModifiedSinceLastLaunch: Boolean = false
+    val path: String
 )
